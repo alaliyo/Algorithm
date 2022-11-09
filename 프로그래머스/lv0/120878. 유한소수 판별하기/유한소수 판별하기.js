@@ -1,5 +1,5 @@
 function solution(a, b) {
-    let aArr = [];
+    let aArr = []
     
     while (a % 2 === 0) {
         aArr.push(2);
