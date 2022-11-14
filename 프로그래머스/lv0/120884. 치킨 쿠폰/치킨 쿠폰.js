@@ -1,11 +1,10 @@
 function solution(chicken) {
-    let coupon = 0;
-    
+    let serviceChicken = 0;
     while (chicken >= 10) {
         const remainder = chicken % 10;
         chicken = Math.floor(chicken/10);
-        coupon += chicken;
+        serviceChicken += chicken;
         chicken += remainder;
     }
-    return coupon;
+    return serviceChicken;
 }
