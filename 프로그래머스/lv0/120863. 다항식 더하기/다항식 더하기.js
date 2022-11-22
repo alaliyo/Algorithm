@@ -1,5 +1,5 @@
 function solution(polynomial) {
-    let arr = polynomial.split(' + ');
+    const arr = polynomial.split(' + ');
     let x = 0;
     let num = 0;
     for (let i = 0; i < arr.length; i++) {
