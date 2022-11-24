@@ -1,7 +1,7 @@
 function solution(quiz) {
-  return quiz
-    .map((el) => el.split(" = "))
-    .map((el) => {
-      return eval(el[0]) == el[1] ? "O" : "X";
-    });
+    for (let i = 0; i < quiz.length; i++) {
+        let arr = quiz[i].split(' = ');
+        new Function('return('+ arr[0] + ')')() === Number(arr[1]) ? quiz[i] = 'O' : quiz[i] = 'X'
+    }
+    return quiz
 }
