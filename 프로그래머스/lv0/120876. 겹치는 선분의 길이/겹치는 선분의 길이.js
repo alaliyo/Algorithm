@@ -1,14 +1,9 @@
 function solution(lines) {
-    let arr = []
-    for (let i = 0; i < lines.length; i++) {
-        let index = lines[i];
-        index.sort((a, b) => a - b);
-        while (index[0] < index[1]) {
-            arr.push(index[0]);
-            index[0]++;
-        }
-    }
-    let arrFilter = arr.filter((item, index) => arr.indexOf(item) !== index);
-    let arrSet = [...new Set(arrFilter)];
-    return arrSet.length;
+    let line = new Array(200).fill(0);
+
+    lines.forEach(([a, b]) => {
+        for(; a < b; a++) line[a+100]++;
+    });
+
+    return line.reduce((a, c) =>  c > 1 ? a + 1 : a, 0)
 }
