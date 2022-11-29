@@ -5,7 +5,7 @@ function solution(dots) {
         while (j <= 3 && i < j) {
             let y = dots[i][1] >= dots[j][1] ? dots[i][1] - dots[j][1] : dots[j][1] - dots[i][1];
             let x = dots[i][0] >= dots[j][0] ? dots[i][0] - dots[j][0] : dots[j][0] - dots[i][0];
-            arr.push(y/x);
+            arr.push( (dots[i][1] - dots[j][1]) / (dots[i][0] - dots[j][0]) );
             j--
         }
     }
