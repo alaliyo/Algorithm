@@ -1,4 +1,4 @@
 function solution(n) {
-    const nSqrt = Math.sqrt(n);
-    return Number.isInteger(nSqrt) === true ? (nSqrt + 1) ** 2 : -1;
+    const x = Math.sqrt(n);
+    return Number.isInteger(x) === true ? (x + 1) ** 2 : -1;
 }
