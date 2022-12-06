@@ -1,9 +1,3 @@
 function solution(s){
-    let count = 0;
-    const sLower = s.toLowerCase().match(/p|y/g);
-    if (sLower == null) {
-        return true;
-    }
-    sLower.map(e => e === 'p' ? count++ : count--);
-    return count === 0 ? true : false;
+    return s.toLowerCase().split('p').length === s.toLowerCase().split('y').length
 }
