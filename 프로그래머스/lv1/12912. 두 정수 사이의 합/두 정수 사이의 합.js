@@ -1,8 +1,8 @@
 function solution(a, b) {
-    const dif = Math.abs(a - b);
-    if (dif % 2 === 0) {
-        return (a + b) / 2 * (dif+1)
-    } else {
-        return (a + b) * ((dif + 1) / 2)
+    let num = 0;
+    let arr = [a, b].sort((num1, num2) => num1 - num2);
+    for (let i = arr[0]; arr[0] <= arr[1]; arr[0]++) {
+        num += arr[0];
     }
+    return num;
 }
