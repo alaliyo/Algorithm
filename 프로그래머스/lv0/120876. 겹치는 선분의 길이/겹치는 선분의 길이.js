@@ -9,6 +9,5 @@ function solution(lines) {
         }
     }
     let arrFilter = arr.filter((item, index) => arr.indexOf(item) !== index);
-    let arrSet = [...new Set(arrFilter)];
-    return arrSet.length;
+    return [...new Set(arrFilter)].length;
 }

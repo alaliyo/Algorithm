@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 33.4 MB, 시간: 0.25 ms
+메모리: 33.4 MB, 시간: 0.18 ms
 
 ### 구분
 
@@ -16,12 +16,13 @@
 
 ### 문제 설명
 
-<p>빨간색, 초록색, 파란색 선분이 x축 위에 있습니다. 세 선분의 x좌표 시작과 끝이 [[start, end], [start, end], [start, end]] 형태로 들어있는 2차원 배열 <code>lines</code>가 매개변수로 주어질 때, 두 개 이상의 선분이 겹치는 부분의 길이를return 하도록 solution 함수를 완성해보세요.</p>
+<p>선분 3개가 평행하게 놓여 있습니다. 세 선분의 시작과 끝 좌표가 [[start, end], [start, end], [start, end]] 형태로 들어있는 2차원 배열 <code>lines</code>가 매개변수로 주어질 때, 두 개 이상의 선분이 겹치는 부분의 길이를 return 하도록 solution 함수를 완성해보세요.</p>
 
-<p><code>lines</code>가 [[0, 2], [-3, -1], [-2, 1]]일 때 그림으로 나타내면 다음과 같습니다.<br>
-<img src="https://grepp-programmers.s3.ap-northeast-2.amazonaws.com/files/production/4feda8d5-aa8f-4a55-8afc-db776e2f9bcd/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-08-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.08.46.png" title="" alt="스크린샷 2022-08-08 오후 5.08.46.png"></p>
+<p><code>lines</code>가 [[0, 2], [-3, -1], [-2, 1]]일 때 그림으로 나타내면 다음과 같습니다.</p>
 
-<p>선분이 두 개 이상 겹친 곳은 [-2, -1], [0, 1]로 2만큼 겹쳐있습니다.</p>
+<p><img src="https://grepp-programmers.s3.ap-northeast-2.amazonaws.com/files/production/e4122d8b-9ce2-49ce-a360-3d1284babd8a/line_2.png" title="" alt="line_2.png"></p>
+
+<p>선분이 두 개 이상 겹친 곳은 [-2, -1], [0, 1]로 길이 2만큼 겹쳐있습니다.</p>
 
 <hr>
 
@@ -31,7 +32,7 @@
 <li><code>lines</code>의 길이 = 3</li>
 <li><code>lines</code>의 원소의 길이 = 2</li>
 <li>모든 선분은 길이가 1 이상입니다.</li>
-<li><code>lines</code>의 원소는 [a, b] 형태이며, a, b는 각각 양 끝점 중 하나입니다.
+<li><code>lines</code>의 원소는 [a, b] 형태이며, a, b는 각각 선분의 양 끝점 입니다.
 
 <ul>
 <li>-100 ≤ a &lt; b ≤ 100</li>
@@ -68,7 +69,7 @@
 <p>입출력 예 #1</p>
 
 <ul>
-<li>초록색과 파란색 선분이 [2, 5], [3, 9]로 [3, 5]만큼 겹쳐있으므로 2를 return 합니다.</li>
+<li>두 번째, 세 번째 선분 [2, 5], [3, 9]가 [3, 5] 구간에 겹쳐있으므로 2를 return 합니다.</li>
 </ul>
 
 <p>입출력 예 #2</p>
@@ -80,10 +81,10 @@
 <p>입출력 예 #3</p>
 
 <ul>
-<li>빨간색과 초록색 선분 [3, 5]부분이 겹칩니다.</li>
-<li>빨간색과 파란색 선분 [1, 5]부분이 겹칩니다.</li>
-<li>초록색과 파란색 선분이 [3, 9]부분 겹칩니다.</li>
-<li>따라서 8을 return 합니다.</li>
+<li>첫 번째와 두 번째 선분이 [3, 5] 구간에서&nbsp;겹칩니다.</li>
+<li>첫 번째와 세 번째 선분 [1, 5] 구간에서&nbsp;겹칩니다.</li>
+<li>두 번째와 세 번째 선분 [3, 9] 구간에서&nbsp;겹칩니다.</li>
+<li>따라서 [1, 9] 구간에 두 개 이상의 선분이 겹쳐있으므로, 8을 return 합니다.</li>
 </ul>
 
 
