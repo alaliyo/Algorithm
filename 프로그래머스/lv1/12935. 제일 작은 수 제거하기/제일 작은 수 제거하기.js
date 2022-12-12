@@ -1,5 +1,5 @@
 function solution(arr) {
-    const min = Math.min.apply(Math, arr)
-    const numArr = arr.filter(e => e !== min)
-    return numArr.length !== 0 ? numArr : [-1];
+    arr.splice(arr.indexOf(Math.min(...arr)),1);
+    if(arr.length<1)return[-1];
+    return arr;
 }
