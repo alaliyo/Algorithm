@@ -1,7 +1,4 @@
 function solution(arr, divisor) {
-    let arr1 = arr.filter(e => e % divisor === 0).sort((a, b) => a - b);
-    if (arr1.length === 0) {
-        return [-1]
-    }
-    return arr1;
+    var answer = arr.filter(v => v%divisor == 0);
+    return answer.length == 0 ? [-1] : answer.sort((a,b) => a-b);
 }
