@@ -1,3 +1,3 @@
 function solution(absolutes, signs) {
-    return absolutes.reduce((a, e, i) => a + (e * (signs[i] ? 1 : -1)), 0)
+    return absolutes.reduce((n, e, i) => n + (e * (signs[i] ? 1 : -1)), 0)
 }
