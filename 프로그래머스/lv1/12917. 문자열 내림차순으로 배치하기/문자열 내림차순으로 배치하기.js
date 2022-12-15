@@ -1,3 +1,3 @@
 function solution(s) {
-    return s.split('').sort((a, b) => b.codePointAt(0) - a.codePointAt(0) ).join('');
+    return s.split('').sort((a, b) => a < b ? 1 : -1).join('');
 }
