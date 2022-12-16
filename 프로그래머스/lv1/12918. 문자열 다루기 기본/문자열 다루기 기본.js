@@ -1,6 +1,3 @@
 function solution(s) {
-    if (s.length === 4 || s.length === 6) {
-        return !/[a-z]|[A-Z]/.test(s);
-    }
-    return false;
+    return /^\d{4}$|^\d{6}$/.test(s);
 }
