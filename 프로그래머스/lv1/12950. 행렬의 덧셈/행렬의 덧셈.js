@@ -1,5 +1,8 @@
 function solution(arr1, arr2) {
-    const answer = [];
-    arr1.forEach((arr, i) => answer.push(arr.map((v, j) => v + arr2[i][j])));
-    return answer;
+    for (let i = 0; i < arr1.length; i++) {
+        for (let j = 0; j < arr1[i].length; j++) {
+            arr1[i][j] += arr2[i][j];
+        }
+    }
+    return arr1
 }
