@@ -1,7 +1,4 @@
 function solution(price, money, count) {
-    for (let i = 1; i <= count; i++) {
-        money -= price * i
-    }
-
-    return money > 0 ? 0 : -money;
+    const num = (price + price * count) * (count / 2) - money;
+    return num > 0 ? num : 0;
 }
