@@ -5,10 +5,10 @@ process.stdin.on('data', data => {
     let str = '';
     let star = '';
     for (let i = 0; i < a; i++) {
-        str += '*'
+        str += '*';
     }
     for (let i = 0; i < b; i++) {
-        star += `${str}\n`
+        star += `${str}\n`;
     }
     console.log(star)
 });
