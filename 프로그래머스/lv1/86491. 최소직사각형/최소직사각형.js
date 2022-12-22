@@ -8,8 +8,5 @@ function solution(sizes) {
         max.push(sizes[i][1]);
     }
     
-    min.sort((a, b) => b - a);
-    max.sort((a, b) => b - a);
-    
-    return min[0] * max[0];
+    return Math.max.apply(null, min) * Math.max.apply(null, max);
 }
