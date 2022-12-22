@@ -3,8 +3,9 @@ function solution(sizes) {
     let max = [];
     
     for (let i = 0; i < sizes.length; i++) {
-        min.push(Math.min.apply(null, sizes[i]));
-        max.push(Math.max.apply(null, sizes[i]));
+        sizes[i].sort((a, b) => a - b)
+        min.push(sizes[i][0]);
+        max.push(sizes[i][1]);
     }
     
     min.sort((a, b) => b - a);
