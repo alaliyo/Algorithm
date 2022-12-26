@@ -1,41 +1,22 @@
 function solution(board) {
-    let count = 0;
-    for (let i = 0; i < board.length; i++) {
-        for (let j = 0; j < board[i].length; j++) {
-            if (board[i][j] % 2 !== 0) {
-                if (i - 1 >= 0) {
-                    if (j - 1 >= 0) {
-                        board[i-1][j-1] % 2 !== 0 ? board[i-1][j-1] = 3 : board[i-1][j-1] = 2;
-                    }
-                    if (j + 1 < board[i].length) {
-                        board[i-1][j+1] % 2 !== 0 ? board[i-1][j+1] = 3 : board[i-1][j+1] = 2;
-                    }
-                    board[i-1][j] % 2 !== 0 ? board[i-1][j] = 3 : board[i-1][j] = 2;
-                }
+    let rows = board.length,
+        cols = board[0].length;
 
-                if (i + 1 < board.length) {
-                    if (j - 1 >= 0) {
-                        board[i+1][j-1] % 2 !== 0 ? board[i+1][j-1] = 3 : board[i+1][j-1] = 2;
-                    }
-                    if (j + 1 < board[i].length) {
-                        board[i+1][j+1] % 2 !== 0 ? board[i+1][j+1] = 3 : board[i+1][j+1] = 2;
-                    }
-                    board[i+1][j] % 2 !== 0 ? board[i+1][j] = 3 : board[i+1][j] = 2;
-                }
+    let chk = Array(rows);
+    for (let i = 0; i < cols; i++) chk[i] = Array(cols).fill(true);
 
-                if (j - 1 >= 0) {
-                        board[i][j-1] % 2 !== 0 ? board[i][j-1] = 3 : board[i][j-1] = 2;
+    for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+            if (board[row][col] === 1) {
+                for (let i = Math.max(0, row-1); i < Math.min(row+2, rows); i++) {
+                    for (let j = Math.max(0, col-1); j < Math.min(col+2, cols); j++) {
+                        chk[i][j] = false;
                     }
-                if (j + 1 < board[i].length) {
-                        board[i][j+1] % 2 !== 0 ? board[i][j+1] = 3 : board[i][j+1] = 2;
-                    }
+                }
             }
         }
     }
 
-    for (let i = 0; i < board.length; i++) {
-        board[i].map(e => e === 0 ? count++ : e);
-    }
+    return chk.flat().filter(v=>v).length;
 
-    return count;
 }
