@@ -1,13 +1,12 @@
 function solution(n) {
-  let s= [...Array(n).keys()]
-  // console.log(s);
-  s[0]=0
-  for(let i=2; i<=parseInt(n**.5)+1;i++){
-    // console.log(i);
-
-    for (let j=2 ; j<=(n-i)/i+1; j++){
-      s[i*j-1]=0
+    let s = [...Array(n).keys()];
+    console.log(s);
+    s[0] = 0;
+    for(let i=2; i<=parseInt(n**.5)+1;i++){
+        console.log(i);
+        for (let j=2 ; j<=(n-i)/i+1; j++){
+            s[i*j-1]=0
+        }
     }
-  }
-  return s.filter(x=>Boolean(x)).length;
+    return s.filter(x=>Boolean(x)).length;
 }
