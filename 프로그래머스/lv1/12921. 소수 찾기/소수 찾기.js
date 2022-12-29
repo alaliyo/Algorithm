@@ -1,28 +1,17 @@
 function solution(n) {
-    let nums = [];
-    for (let i = 2; i <= n; i++) {
-        nums.push(i);
+    const s = new Set();
+    for(let i=1; i<=n; i+=2){
+        s.add(i);
     }
-    
-    let arr = [2];
-    
-    const isPrime = (num) => {
-        if(num % 2 === 0) { 
-            return 0;
+    s.delete(1);
+    s.add(2);
+    for(let j=3; j<Math.sqrt(n); j++){
+        if(s.has(j)){
+             for(let k=j*2; k<=n; k+=j){    
+                s.delete(k);
+             }
         }
-        
-        const sqrt = parseInt(Math.sqrt(num));
+    }
+    return s.size;
 
-        for (let i = 3; i <= sqrt; i += 2) {
-            if(num % i === 0) {return 0;}
-        }
-        return num;
-    }
-    
-    for (let i = 0; i < nums.length; i++) {
-        const e = isPrime(nums[i]);
-        e !== 0 ? arr.push(e) : null;
-    }
-                
-    return arr.length;
 }
