@@ -3,9 +3,9 @@ function solution(answers) {
     const b = [2, 1, 2, 3, 2, 4, 2, 5];
     const c = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5];
     
-    let aCount = answers.filter((e, i) => e === a[i % a.length]).length;
-    let bCount = answers.filter((e, i) => e === b[i % b.length]).length;
-    let cCount = answers.filter((e, i) => e === c[i % c.length]).length;
+    let aCount = answers.filter((e, i) => e === a[i % 5]).length;
+    let bCount = answers.filter((e, i) => e === b[i % 8]).length;
+    let cCount = answers.filter((e, i) => e === c[i % 10]).length;
 
     let arr = [];
     
