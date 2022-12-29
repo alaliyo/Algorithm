@@ -7,6 +7,8 @@ function solution(answers) {
     let bCount = 0;
     let cCount = 0;
     
+    let arr = [];
+    
     for (let i = 1; i <= answers.length; i++) {
         const anum = i % 5 === 0 ? 5 : i % 5;
         const bnum = i % 8 === 0 ? 8 : i % 8;
@@ -16,12 +18,11 @@ function solution(answers) {
         answers[i-1] === c[cnum-1] ? cCount++ : null;
     }
     
-    if (aCount > bCount && aCount > cCount) {return([1])}
-    else if (bCount > aCount && bCount > cCount) {return([2])}
-    else if (cCount > aCount && cCount > bCount) {return([3])}
-    else if (bCount > aCount && bCount > cCount) {return([2])}
-    else if (aCount === bCount && aCount > cCount) {return([1, 2])}
-    else if (aCount === cCount && aCount > bCount) {return([1, 3])}
-    else if (bCount === cCount && bCount > aCount) {return([2, 3])}
-    else {return[1, 2, 3]}
+    const max = Math.max(aCount, bCount, cCount);
+    
+    if (max === aCount) {arr.push(1)} 
+    if (max === bCount) {arr.push(2)}
+    if (max === cCount) {arr.push(3)} 
+    
+    return arr;
 }
