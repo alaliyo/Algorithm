@@ -7,5 +7,5 @@ function solution(lottos, win_nums) {
     
     lottos.map(e => e === 0 ? countArr[0]-- : e);
     
-    return countArr.map((e, i) => e === 7 ? 6 : e);
+    return countArr.map(e => e === 7 ? 6 : e);
 }
