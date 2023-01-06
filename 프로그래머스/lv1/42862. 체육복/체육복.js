@@ -1,9 +1,11 @@
 function solution(n, lost, reserve) {
     
+    // 두 배열에 중복 수 제거 후 오름차순 정렬
     let lost2 = lost.filter(e => !reserve.some(f => f === e)).sort((a, b) => a - b);
     let reserve2 = reserve.filter(e => !lost.some(f => f === e)).sort((a, b) => a - b);;
     
     n -= lost2.length;
+    
     for(let i = 0; i < lost2.length; i++) {
         for(let j = 0; j < reserve2.length; j++) {
             if(lost2[i] === reserve2[j] - 1) {
@@ -19,5 +21,6 @@ function solution(n, lost, reserve) {
             }
         }
     }
+    
     return n;
 }
