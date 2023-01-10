@@ -5,7 +5,7 @@ function solution(k, score) {
         dayScore.push(score[i]);
         if(dayScore.length > k) {
             dayScore.sort((a, b) => b - a);
-            dayScore.splice(k, 1);
+            dayScore.pop();
         }
         minArr.push(Math.min.apply(null, dayScore));
     }
