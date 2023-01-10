@@ -1,13 +1,13 @@
 function solution(k, score) {
-    let scoreArr = [];
-    let scores = [];
+    let dayScore = [];
+    let minArr = [];
     for(let i = 0; i < score.length; i++) {
-        scoreArr.push(score[i]);
-        if(scoreArr.length > k) {
-            scoreArr.sort((a, b) => b - a);
-            scoreArr.splice(k, 1);
+        dayScore.push(score[i]);
+        if(dayScore.length > k) {
+            dayScore.sort((a, b) => b - a);
+            dayScore.splice(k, 1);
         }
-        scores.push(Math.min.apply(null, scoreArr));
+        minArr.push(Math.min.apply(null, dayScore));
     }
-    return scores;
+    return minArr;
 }
