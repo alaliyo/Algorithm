@@ -1,11 +1,7 @@
 function solution(X, Y) {
     let arr = [];
     let NewObj = {};
-    
-    const obj = (arr) => arr.reduce((ac, v) => ({
-        ...ac, [v]: (ac[v] || 0) + 1 
-    }), {});
-    
+    const obj = (arr) => arr.reduce((ac, v) => ({ ...ac, [v]: (ac[v] || 0) + 1 }), {});
     const xObj = obj([...X]);
     const yObj = obj([...Y]);
 
