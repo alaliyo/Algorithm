@@ -9,8 +9,8 @@ function solution(numbers, hand) {
     for (let i = 0; i < numbers.length; i++) {
         const e = numbers[i];
         const pos = numsPos[e];
-        const LC = Math.abs(left[0] - pos[0]) + Math.abs(left[1] - pos[1]);
-        const RC = Math.abs(right[0] - pos[0]) + Math.abs(right[1] - pos[1]);
+        const LPos = Math.abs(left[0] - pos[0]) + Math.abs(left[1] - pos[1]);
+        const RPos = Math.abs(right[0] - pos[0]) + Math.abs(right[1] - pos[1]);
         
         if (e === 1 || e === 4 || e === 7) {
             left = pos;
@@ -19,7 +19,7 @@ function solution(numbers, hand) {
             right = pos;
             str += 'R';
         } else if (hand === 'left') {
-            if (LC <= RC) {
+            if (LPos <= RPos) {
                 left = pos;
                 str += 'L';
             } else {
@@ -27,7 +27,7 @@ function solution(numbers, hand) {
                 str += 'R';
             }
         } else if (hand === 'right') {
-            if (RC <= LC) {
+            if (RPos <= LPos) {
                 right = pos;
                 str += 'R';
             } else {
