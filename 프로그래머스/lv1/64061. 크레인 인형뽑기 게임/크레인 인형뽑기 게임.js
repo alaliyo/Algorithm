@@ -1,6 +1,7 @@
 function solution(board, moves) {
     let arr = [];
     let count = 0;
+    
     for (let i = 0; i < moves.length; i++) {
         let e = moves[i];
         for (let j = 0; j < board.length; j++) {
@@ -9,7 +10,7 @@ function solution(board, moves) {
                 if (doll === arr[arr.length - 1]) {
                     arr.pop();
                     board[j][e - 1] = 0;
-                    count++;
+                    count += 2;
                 } else {
                     arr.push(doll);
                     board[j][e - 1] = 0;
@@ -18,5 +19,5 @@ function solution(board, moves) {
             }
         }
     }
-    return count * 2;
+    return count;
 }
