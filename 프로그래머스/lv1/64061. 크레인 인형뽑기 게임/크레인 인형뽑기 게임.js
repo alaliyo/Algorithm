@@ -19,5 +19,6 @@ function solution(board, moves) {
             }
         }
     }
+    
     return count;
 }
