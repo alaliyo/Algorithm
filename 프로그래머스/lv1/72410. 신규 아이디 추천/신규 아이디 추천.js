@@ -2,9 +2,7 @@ function solution(new_id) {
     new_id = new_id.toLowerCase();
     new_id = new_id.replace(/[^0-9a-z|.|_|-]/g, '');
     
-    while (new_id.indexOf('..') >= 0) {
-        new_id = new_id.replace('..', '.');
-    }
+    new_id = new_id.replace(/[\.]{2,}/g, '.');
     
     new_id[0] === '.' ? new_id = new_id.substring(1) : null;
     
