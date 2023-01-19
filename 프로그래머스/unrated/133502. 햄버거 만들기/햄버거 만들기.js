@@ -1,18 +1,18 @@
 function solution(ingredient) {
     let count = 0;
-    let stack = [];
+    let arr = [];
 
     for (let i = 0; i < ingredient.length; ++i) {
-        stack.push(ingredient[i]);
+        arr.push(ingredient[i]);
 
-        if (stack.length < 4) continue;
+        if (arr.length < 4) continue;
 
-        if (stack[stack.length - 4] === 1
-            && stack[stack.length - 3] === 2
-            && stack[stack.length - 2] === 3
-            && stack[stack.length - 1] === 1) {
+        if (arr[arr.length - 4] === 1
+            && arr[arr.length - 3] === 2
+            && arr[arr.length - 2] === 3
+            && arr[arr.length - 1] === 1) {
             for (let j = 0; j < 4; ++j) {
-                stack.pop();
+                arr.pop();
             }
             count++;   
         }
