@@ -1,17 +1,9 @@
 function solution(s){
-    let answer = true;
-        let arr = [];
-        if(s[0] == ')') {
-        answer = false;
-        return answer;
-      }
-    for(let i=0; i<s.length; i++){
-        if(s[i] == '('){
-        arr.push(s[i])
-      }else{
-        arr.pop();
-      }
-    }
-    answer = arr.length > 0 ? false : true;
-    return answer;
+    if (s[0] === ')' || s[s.length-1] === '(') return false;
+    if (s.match(/\(/g).length !== s.match(/\)/g).length) return false;
+    s = s.replaceAll('()', "")
+    if (s.length === 0) return true;
+    if (s[0] === ')' || s[s.length-1] === '(') return false;
+    if (s.match(/\(/g).length === s.match(/\)/g).length) return true;
+    return false;
 }
