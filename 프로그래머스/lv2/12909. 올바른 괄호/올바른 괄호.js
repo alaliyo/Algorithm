@@ -1,9 +1,11 @@
 function solution(s){
-    if (s[0] === ')' || s[s.length-1] === '(' || s < 2 || s.length % 2 !==0) return false;
-    if (s.match(/\(/g).length !== s.match(/\)/g).length) return false;
-    s = s.replaceAll('()', "")
-    if (s.length === 0) return true;
-    if (s[0] === ')' || s[s.length-1] === '(') return false;
-    if (s.match(/\(/g).length === s.match(/\)/g).length) return true;
-    return false;
+    var answer = true;
+    let count = 0;
+    if(s[0] == ")"){return false}
+    for(let i = 0; i < s.length; i++){
+        count += s[i]=="("? -1 : 1 ;
+        if(count >0)return false;
+    }
+
+    return count ==0?true:false;
 }
