@@ -1,11 +1,17 @@
 function solution(s){
-    var answer = true;
-    let count = 0;
-    if(s[0] == ")"){return false}
-    for(let i = 0; i < s.length; i++){
-        count += s[i]=="("? -1 : 1 ;
-        if(count >0)return false;
+    let answer = true;
+        let arr = [];
+        if(s[0] == ')') {
+        answer = false;
+        return answer;
+      }
+    for(let i=0; i<s.length; i++){
+        if(s[i] == '('){
+        arr.push(s[i])
+      }else{
+        arr.pop();
+      }
     }
-
-    return count ==0?true:false;
+    answer = arr.length > 0 ? false : true;
+    return answer;
 }
