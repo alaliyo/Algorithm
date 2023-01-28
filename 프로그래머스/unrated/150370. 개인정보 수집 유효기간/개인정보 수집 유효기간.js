@@ -5,11 +5,11 @@ function solution(today, terms, privacies) {
     today = new Date(today.split('.').join('/'));
     
     for (let i = 0; i < privacies.length; i++) {
-        const e = privacies[i];
-        privacies[i][0] = new Date(e[0]);
-        privacies[i] = new Date(e[0].setMonth(e[0].getMonth() + Number(terms[e[1]])));
-        privacies[i].setDate(privacies[i].getDate() - 1);
-        privacies[i] < today ?  arr.push(i+1) : null;
+        let e = privacies[i];
+        e[0] = new Date(e[0]);
+        e = new Date(e[0].setMonth(e[0].getMonth() + Number(terms[e[1]])));
+        e.setDate(e.getDate() - 1);
+        e < today ?  arr.push(i+1) : null;
     }
 
     return arr;
