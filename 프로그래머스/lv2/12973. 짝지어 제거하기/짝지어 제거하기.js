@@ -9,5 +9,6 @@ function solution(s){
             }
         }
     }
+    
     return sArr.length === 0 ? 1 : 0;
 }
