@@ -1,10 +1,10 @@
 function solution(s){
     let sArr = [];
     
-    for (let i = 0; i < s.length; i++) {
-        sArr.push(s[i]);
+    for (let i of s) {
+        sArr.push(i);
         if (sArr[sArr.length-2] === sArr[sArr.length-1]) {
-            for(let i = 0; i < 2; i++) {
+            for(let j = 0; j < 2; j++) {
                 sArr.pop();
             }
         }
