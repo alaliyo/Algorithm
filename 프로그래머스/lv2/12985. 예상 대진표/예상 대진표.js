@@ -3,7 +3,7 @@ function solution(n,a,b){
     while (a !== b) {
         a = Math.ceil(a/2);
         b = Math.ceil(b/2);
-        count += 1;
+        count++;
     }
     return count;
 }
