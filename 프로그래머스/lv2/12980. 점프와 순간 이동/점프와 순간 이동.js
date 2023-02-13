@@ -1,14 +1,3 @@
-function solution(n) {
-    if (n === 1) return 1;
-    let count = 0; 
-    
-    while (n > 1) {
-        while (n % 2 === 0) {
-            n /= 2;
-        }
-        n -= 1;
-        count++;
-    }
-    
-    return count;
+function solution(n){
+    return n.toString(2).replace(/0/g,"").length
 }
