@@ -1,6 +1,7 @@
 function solution(n) {
     if (n <= 2) return 1;
     let count = 0; 
+    
     while (n > 1) {
         while (n % 2 === 0) {
             n /= 2;
