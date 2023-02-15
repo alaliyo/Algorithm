@@ -1,7 +1,6 @@
 function solution(s) {
     let str = s;
     let conut = 0;
-    const len = s
     
     for (let i = 0; i < s.length; i++) {
         str += str[0];
@@ -13,17 +12,7 @@ function solution(s) {
             const a = arr[arr.length - 2];
             const b = arr[arr.length - 1];
             
-            if (a ==='[' && b === ']') {
-                arr.pop();
-                arr.pop();
-            }
-
-            if (a ==='(' && b === ')') {
-                arr.pop();
-                arr.pop();
-            }
-
-            if (a === '{' && b === '}') {
+            if (a ==='[' && b === ']' || a ==='(' && b === ')' || a === '{' && b === '}') {
                 arr.pop();
                 arr.pop();
             }
