@@ -1,14 +1,14 @@
 function solution(n) {
     if (n <= 2) return n;
-    let num1 = 1;
-    let num2 = 2;
-    let num3 = 0;
+    let n1 = 1;
+    let n2 = 2;
+    let nValue = 0;
 
     for (let i = 2; i < n; i++) {
-        num3 = (num1 + num2) % 1234567;
-        num1 = num2;
-        num2 = num3;
+        nValue = (n1 + n2) % 1234567;
+        n1 = n2;
+        n2 = nValue;
     }
 
-    return num3;
+    return nValue;
 }
