@@ -1,26 +1,16 @@
 function solution(k, tangerine) {
     let count = 0;
-    let num = 0;
-    const arr = []
-    let max = Math.max(...tangerine);
+    const obj = {};
+    
+    tangerine.forEach((e) => (obj[e] = (obj[e] || 0) + 1));
+    const arr = Object.values(obj).sort((a, b) => b - a);
 
-    for (let i = 0; i < max; i++) {
-        arr.push(0);
+    for (const e of arr) {
+        count++;
+        
+        if (k > e) k -= e;
+        else break;
     }
 
-    for (let i = 0; i < tangerine.length; i++) {
-        const e = tangerine[i];
-        arr[e-1]++;
-    }
-
-    arr.sort((a, b) => b - a)
-
-    for (let i = 0; i < arr.length; i++) {
-        num += arr[i];
-        count += 1;
-        if (k <= num) {
-            break;
-        }
-    }
-    return count;
+  return count;
 }
