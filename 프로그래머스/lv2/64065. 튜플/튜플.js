@@ -1,11 +1,22 @@
 function solution(s) {
-  const answer = [];
-  const arr = JSON.parse(s.replace(/{/g, "[").replace(/}/g, "]"));
-  arr.sort((a, b) => a.length - b.length);
-  arr.forEach((col) => {
-    col.forEach((row) => {
-      if (!answer.includes(row)) answer.push(row);
+    const answerArr = [];
+    const arr = s.replaceAll('{', '').replaceAll('}', '').split(',');
+    let obj = {};
+
+    arr.forEach((e) => {
+        obj[e] = (obj[e] || 0) + 1;
     });
-  });
-  return answer;
+
+    let objSort = [];
+
+    for (let e in obj) {
+        objSort.push([e, obj[e]]);
+    }
+    objSort.sort((a, b) => b[1] - a[1]);
+
+    for (let e of objSort) {
+        answerArr.push(Number(e[0]));
+    }
+
+    return answerArr;
 }
