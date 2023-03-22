@@ -1,15 +1,13 @@
 function solution(progresses, speeds) {
     const answer = [];
-    progresses.reverse();
-    speeds.reverse();
     
     while (progresses.length > 0) {
         progresses = progresses.map((e, i) => e + speeds[i]);
         let count = 0; 
         
-        while (progresses[progresses.length - 1] >= 100) {
-            progresses.pop();
-            speeds.pop();
+        while (progresses[0] >= 100) {
+            progresses.shift();
+            speeds.shift();
             count++;
         }
         
