@@ -1,15 +1,12 @@
 function solution(elements) {
-    const answer = new Set();
-    const LEN = elements.length;
+    let set = new Set();
+    const eTwice = elements.concat(elements);
 
-    elements = elements.concat(elements);
-
-    for (let len = 1; len <= LEN; len++) {
-        for (let index = 0; index < LEN; index++) {
-            const total = elements.slice(index, index + len).reduce((prev, curr) => prev + curr, 0);
-            answer.add(total);
+    for (let i = 0; i < elements.length; i++) {
+        for (let j = 0; j < elements.length; j++) {
+            set.add([...eTwice].splice(i, j+1).reduce((a, b) => a + b));
         }
     }
 
-    return answer.size;
+    return set.size;
 }
