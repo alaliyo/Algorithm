@@ -1,5 +1,5 @@
 function solution(cacheSize, cities) {
-    let count = 0;
+    let runtime = 0;
     const cache = [];
     cities = cities.map(e => e.toLowerCase());
     
@@ -10,17 +10,17 @@ function solution(cacheSize, cities) {
         
         if (cache.includes(e)) {
             cache.splice(cache.indexOf(e), 1);
-            count++;
+            runtime++;
         } else {
             if (cache.length === cacheSize) {
                 cache.shift();
             }
             
-            count += 5;
+            runtime += 5;
         }
         
         cache.push(e);
     }
 
-    return count;
+    return runtime;
 }
