@@ -7,6 +7,7 @@ function solution(cacheSize, cities) {
     
     for (let i = 0; i < cities.length; i++) {
         const e = cities[i];
+        
         if (cache.includes(e)) {
             cache.splice(cache.indexOf(e), 1);
             count++;
@@ -14,8 +15,10 @@ function solution(cacheSize, cities) {
             if (cache.length === cacheSize) {
                 cache.shift();
             }
+            
             count += 5;
         }
+        
         cache.push(e);
     }
 
