@@ -3,6 +3,7 @@ function solution(str1, str2) {
     str2 = str2.toLowerCase();
     const arr1 = [];
     const arr2 = [];
+    let intersection = 0;
     const regex = /^[a-z]+$/;
 
     for (let i = 0; i < str1.length - 1; i++) {
@@ -16,8 +17,6 @@ function solution(str1, str2) {
     }
     
     let union = arr1.length + arr2.length;
-    
-    let intersection = 0;
     
     for (let i = 0; i < arr1.length; i++) {
         for (let j = 0; j < arr2.length; j++) {
