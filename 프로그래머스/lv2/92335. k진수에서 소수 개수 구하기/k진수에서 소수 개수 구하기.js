@@ -4,18 +4,16 @@ function solution(n, k) {
     
     function isPrime(N) {
         N = Number(N);
-        if (N === 1 || N === 0) return false;
+        if (N === 1 || N === 0) return;
+        
         for (let i = 2; i <= Math.sqrt(N); i++) {
-            if (N % i === 0) return false;
+            if (N % i === 0) return;
         }
 
         return count++;
     }
     
-    for (let i = 0; i < arr.length; i++) {
-        const e = arr[i];
-        isPrime(e);
-    }
+    arr.forEach(num => isPrime(num));
 
     return count;
 }
