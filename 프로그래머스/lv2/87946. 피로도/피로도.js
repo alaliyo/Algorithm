@@ -4,9 +4,7 @@ function solution(k, dungeons) {
     
     function DFS(i, num, count) {
         if (i === len) { 
-            if (num <= k) { 
-                count > answer ? answer = count : null;
-            }
+            count > answer ? answer = count : null;
             return;
         }
         
