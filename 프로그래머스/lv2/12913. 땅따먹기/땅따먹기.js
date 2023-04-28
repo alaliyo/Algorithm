@@ -9,4 +9,3 @@ function solution(land) {
 
     return Math.max(...land[land.length - 1]);
 }
-
