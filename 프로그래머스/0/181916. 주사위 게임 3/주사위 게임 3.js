@@ -4,7 +4,7 @@ function solution(a, b, c, d) {
     const reduceValObj = getElCount(array);
     const reduceValArr = Object.entries(reduceValObj).sort((a, b) => b[1] - a[1]);
     const reduceValArrLen = reduceValArr.length;
-    console.log(reduceValArr);
+    
     if (reduceValArrLen === 1) {
         return 1111 * a;
     } else if (reduceValArrLen === 2) {
