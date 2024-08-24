@@ -1,13 +1,3 @@
 function solution(arr) {
-    var answer = [];
-    for (const item of arr) {
-        if (item >= 50 && item % 2 === 0) {
-            answer.push(item / 2);
-        } else if (item < 50 && item % 2 === 1) {
-            answer.push(item * 2);
-        } else {
-            answer.push(item);
-        }
-    }
-    return answer;
+    return arr.map(e => e >= 50 && e % 2 === 0 ? e / 2 : e < 50 && e % 2 === 1 ? e * 2 : e);
 }
