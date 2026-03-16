@@ -10,6 +10,5 @@ rl.on('line', function (line) {
     input = [line];
 }).on('close',function(){
     str = input[0];
-    const a = str.split("").join("\n");
-    console.log(a)
+    console.log([...str].join("\n"));
 });
