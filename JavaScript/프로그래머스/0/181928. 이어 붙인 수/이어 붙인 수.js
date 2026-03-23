@@ -3,8 +3,7 @@ function solution(num_list) {
     let num2 = "";
     
     for (let e of num_list) {
-        const strNum = e.toString();
-        e % 2 === 0 ? num2 += strNum : num1 += strNum;
+        e % 2 === 0 ? num2 += e : num1 += e;
     }
     
     return Number(num1) + Number(num2);
